@@ -5,11 +5,11 @@
     <title></title>
   </head>
   <body>
-    <form>
+    <form id="form">
       <fieldset>
         <legend>Order Form!</legend>
         <label>Select product:</label>
-        <select id="dropbox"></select>
+        <select name="product" id="dropbox"></select>
 
         <label for="quant">Quantity:</label>
         <input name="quant" type="number" required/>
@@ -33,10 +33,10 @@
         <input name="digits" type="text" reqired/>
 
         <label for="ccard">Credit Card #:</label>
-        <input name="ccard" type="number" max="16" reqired/>
+        <input name="ccard" type="number" min="100000000000000" max="9999999999999999" reqired/>
 
       </fieldset>
-      <button type="submit" id="buy">BUY NOW!</button>
+      <button type="submit">BUY NOW!</button>
     </form>
 
     <script src="app.js"></script>
