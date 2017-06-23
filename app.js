@@ -4,11 +4,10 @@ var products = ['select', 'bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bu
 
 var allOrders = [];
 
-if (document.getElementById('dropbox')){
-  var selectEl = document.getElementById('dropbox');
-  var form = document.getElementById('form');
+var form = document.getElementById('form');
+var selectEl = document.getElementById('dropbox');
 
-  for (var i = 0; i < products.length; i++) {
+for (var i = 0; i < products.length; i++) {
     var optionEl = document.createElement('option');
     optionEl.textContent = products[i];
     selectEl.appendChild(optionEl);
@@ -52,36 +51,14 @@ if (document.getElementById('dropbox')){
     clearForm();
   }
 
-  function clearForm() {
-    event.target.product.value = null;
-    event.target.quant.value = null;
-    event.target.userName.value = null;
-    event.target.street.value = null;
-    event.target.city.value = null;
-    event.target.state.value = null;
-    event.target.zip.value = null;
-    event.target.digits.value = null;
-    event.target.ccard.value = null;
-  }
-} else {
-
-  //ORDERS.HTML
-
-  var ulEl = document.getElementById('orderList');
-  allOrders = JSON.parse(localStorage.lsOrders);
-
-  function makeOrder() {
-    for (var i = 0; i < allOrders.length; i++) {
-      var liEl = document.createElement('li');
-      liEl.textContent = allOrders[i].product + ' ' + allOrders[i].quantity + ' ' + allOrders[i].name + ' ' + allOrders[i].street + ' ' + allOrders[i].city + ' ' + allOrders[i].state + ' ' + allOrders[i].zip + ' ' + allOrders[i].digits;
-
-      var buttonEl = document.createElement('button');
-      buttonEl.textContent = 'Order Filled';
-      liEl.appendChild(buttonEl);
-
-      ulEl.appendChild(liEl);
-    }
-  }
-
-  makeOrder();
+function clearForm() {
+  event.target.product.value = null;
+  event.target.quant.value = null;
+  event.target.userName.value = null;
+  event.target.street.value = null;
+  event.target.city.value = null;
+  event.target.state.value = null;
+  event.target.zip.value = null;
+  event.target.digits.value = null;
+  event.target.ccard.value = null;
 }
